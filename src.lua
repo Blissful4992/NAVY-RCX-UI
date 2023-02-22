@@ -1888,58 +1888,5 @@ Library.NewWindow = function(project_name, ui_info)
     end
     return structurer
 end
--- return Library
 
--- SCRIPT
-
-local Main_Window = Library.NewWindow("Test Window", {window_size = v2(500, 340), window_size_func = function(v)end, scalable = true, exit_func = function()end})
-
-local Test_Page = Main_Window.NewPage("Visuals")
-
-local ESP = Test_Page.NewCategory("Players")
-
-ESP.NewToggle("Names", function() end, {default = false})
-ESP.NewSlider("Text Size", function() end, {default = 15, min = -50, max = 50, decimals = 0})
-ESP.NewToggle("Boxes", function() end, {default = true})
-ESP.NewColorpicker("Color", function() end, {default = RGB(0, 255, 0)})
-
-local Items = Test_Page.NewCategory("Items")
-
-Items.NewButton("Cock", function()
-    print(1)
-end)
-Items.NewToggle("Names", function() Main_Window.Notification("Notification Title", function() end, {body = "Body Paragraph"}) end, {default = false})
-local a = Items.NewSlider("Text Size", function(val)end, {default = 0.1651761279544, min = 0.1, max = 0.25, decimals = 3, suffix = " s"})
-Items.NewToggle("Boxes", function() end, {default = true})
-local b = Items.NewColorpicker("Color", function() end, {default = RGB(0, 255, 0)})
-local c = Items.NewKeybind("Toggle", function() print("hi") end, function(new) print(tostring(new)) end, {default = Enum.KeyCode.LeftAlt})
-local d = Items.NewDropdown("Mode", function(op) print(op) end, {options = {"Head", "Bones", "Character"}, default = 2})
-local e = Items.NewPlayerChipset("Whitelisted Players", function(tbl)
-    warn()
-    for i,v in pairs(tbl) do
-        print(i,v)
-    end
-end)
-
-
--- Main_Window.NewPage("Aimbot")
-
--- wait(5)
-
--- Main_Window.NewPage("Aimbot")
--- Main_Window.NewPage("Aimbot")
--- Main_Window.NewPage("Aimbot")
--- Main_Window.NewPage("Aimbot")
--- Main_Window.NewPage("Aimbot")
--- Main_Window.NewPage("Aimbot")
--- a.SetValue(10)
--- wait(1)
--- b.SetColor(RGB(255, 0, 0))
--- wait(1)
--- c.SetKeybind(Enum.KeyCode.Insert)
--- wait(1)
--- d.AddOption("fucker")
--- wait(1)
--- d.SelectOption("fucker")
--- wait(1)
--- d.RemoveOption("fucker")
+return Library
